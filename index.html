@@ -11,17 +11,19 @@
 
   </head>
 
-  <body x-data>
-    <h1
-    class="font-semibold text-lg m-4"
-    x-text="$store.data.topic"> </h1>
-    <p>hello world</p>
+  <body 
+  class="m-2 space-y-4" x-data>
+    <h1 class="font-semibold text-lg m-4" x-text="$store.data.topic"> </h1>
+    <div class="container mx-auto max-w-xl">
     <p
     x-text="$store.data.count">    
     </p>
-    <button onclick="inc()">
+  </div>
+<div class="container mx-auto max-w-xl">
+  <button
+    class="border  px-2 rounded shadow-md bg-blue-200" onclick="inc()">
       +
     </button>
-
+  </div>
   </body>
 </html>
