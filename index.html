@@ -43,5 +43,22 @@
             -10
           </button>
         </div>
+        <div class="container mx-auto max-w-xl">
+        <input  class = "border rounded drop-shadow px-1.5 w-32"
+        placeholder = "Eingabe Punkte"
+        x-model.number = "$store.data.inputPoints"> 
+      </div>
+      <div class="container mx-auto max-w-xl">
+        <button
+          class="border  px-2 rounded shadow-md bg-blue-200" onclick="addUserInput()">
+            Füge hinzu
+          </button>
+          <button
+          class="border  px-2 rounded shadow-md bg-blue-200" onclick="subUserInput()">
+            Ziehe ab
+          </button>
+
+        </div>
+
   </body>
 </html>
