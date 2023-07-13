@@ -1,34 +1,51 @@
 document.addEventListener("alpine:init", () => {
+  const storedCount = localStorage.getItem('count');
+  const initCount = storedCount ? parseInt(storedCount) : 0;
+
   Alpine.store("data", {
     topic: "Alpine Tailwind Starter",
-    count: 0,
-    inputPoints : 0,
+    count: initCount,
+    inputPoints: 0,
   });
 });
 
 const data = () => Alpine.store("data")
 
-function inc(){
-data().count += 1;  
+function inc() {
+  data().count += 1;
+  saveCountToLocalStorage();
 }
 
-function dec(){
-  data().count -= 1;  
-  }
+function dec() {
+  data().count -= 1;
+  saveCountToLocalStorage();
+}
 
-  function addTen(){
-    data().count += 10;  
-    }
+function addTen() {
+  data().count += 10;
+  saveCountToLocalStorage();
+}
 
-    function subTen(){
-      data().count -= 10;  
-      }
-       
+function subTen() {
+  data().count -= 10;
+  saveCountToLocalStorage();
+  console.log("uhu");
+}
 
-      function addUserInput(){
-        data().count += data().inputPoints;  
-        }
-        function subUserInput(){
-          data().count -= data().inputPoints;  
-          }
-    
+
+function addUserInput() {
+  data().count += data().inputPoints;
+  saveCountToLocalStorage();
+}
+
+function subUserInput() {
+  data().count -= data().inputPoints;
+  saveCountToLocalStorage();
+}
+
+function saveCountToLocalStorage() {
+  const storedCount = localStorage.getItem('count');
+  localStorage.setItem('count', data().count);
+  console.log("foo");
+  console.log(storedCount);
+}

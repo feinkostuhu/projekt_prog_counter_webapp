@@ -1,64 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>HTML Template + Alpine.js (CDN)</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script defer src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs" ></script>
-    <script src="./js/script.js"  ></script>
 
-  </head>
+<head>
+  <title>HTML Template + Alpine.js (CDN)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script defer src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs"></script>
+  <script src="./js/script.js"></script>
 
-  <body 
-  class="m-2 space-y-4" x-data>
-    <h1 class="font-semibold text-lg m-4" x-text="$store.data.topic"> </h1>
-    <div class="container mx-auto max-w-xl">
-    <p
-    x-text="$store.data.count">    
+</head>
+
+<body class="m-2 space-y-4" x-data>
+  <h1 class="font-semibold text-lg m-4" x-text="$store.data.topic"> </h1>
+  <div class="container mx-auto max-w-xl">
+    <p x-text="$store.data.count"></p>
+    <!-- <p x-text="localStorage.getItem('count')"> -->
+
     </p>
   </div>
-<div class="container mx-auto max-w-xl">
-  <button
-    class="border  px-2 rounded shadow-md bg-blue-200" onclick="inc()">
+  <div class="container mx-auto max-w-xl">
+    <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="inc()">
       +
     </button>
   </div>
   <div class="container mx-auto max-w-xl">
-    <button
-      class="border  px-2 rounded shadow-md bg-blue-200" onclick="dec()">
-        -
-      </button>
-    </div>
-    <div class="container mx-auto max-w-xl">
-      <button
-        class="border  px-2 rounded shadow-md bg-blue-200" onclick="addTen()">
-          +10
-        </button>
-      </div>
-      <div class="container mx-auto max-w-xl">
-        <button
-          class="border  px-2 rounded shadow-md bg-blue-200" onclick="subTen()">
-            -10
-          </button>
-        </div>
-        <div class="container mx-auto max-w-xl">
-        <input  class = "border rounded drop-shadow px-1.5 w-32"
-        placeholder = "Eingabe Punkte"
-        x-model.number = "$store.data.inputPoints"> 
-      </div>
-      <div class="container mx-auto max-w-xl">
-        <button
-          class="border  px-2 rounded shadow-md bg-blue-200" onclick="addUserInput()">
-            Füge hinzu
-          </button>
-          <button
-          class="border  px-2 rounded shadow-md bg-blue-200" onclick="subUserInput()">
-            Ziehe ab
-          </button>
+    <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="dec()">
+      -
+    </button>
+  </div>
+  <div class="container mx-auto max-w-xl">
+    <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="addTen()">
+      +10
+    </button>
+  </div>
+  <div class="container mx-auto max-w-xl">
+    <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="subTen()">
+      -10
+    </button>
+  </div>
+  <div class="container mx-auto max-w-xl">
+    <input class="border rounded drop-shadow px-1.5 w-32" placeholder="Eingabe Punkte"
+      x-model.number="$store.data.inputPoints">
+  </div>
+  <div class="container mx-auto max-w-xl">
+    <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="addUserInput()">
+      Füge hinzu
+    </button>
+    <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="subUserInput()">
+      Ziehe ab
+    </button>
 
-        </div>
+  </div>
 
-  </body>
+</body>
+
 </html>
