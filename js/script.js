@@ -49,3 +49,7 @@ function saveCountToLocalStorage() {
   console.log("foo");
   console.log(storedCount);
 }
+
+function resetCounter() {
+  data().count = 0;
+}
