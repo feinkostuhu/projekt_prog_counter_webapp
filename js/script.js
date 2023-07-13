@@ -8,5 +8,10 @@ document.addEventListener("alpine:init", () => {
 const data = () => Alpine.store("data")
 
 function inc(){
-  data().count += 1;  
+data().count += 1;  
 }
+
+function dec(){
+  data().count -= 1;  
+  }
+  
