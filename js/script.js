@@ -14,4 +14,12 @@ data().count += 1;
 function dec(){
   data().count -= 1;  
   }
+
+  function addTen(){
+    data().count += 10;  
+    }
+
+    function subTen(){
+      data().count -= 10;  
+      }
   
