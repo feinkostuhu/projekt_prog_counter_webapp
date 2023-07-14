@@ -6,7 +6,9 @@ document.addEventListener("alpine:init", () => {
     topic: "Alpine Tailwind Starter",
     count: initCount,
     inputPoints: 0,
-    color: "weiß"
+    color: "weiß",
+    font: "font-sans"
+
   });
 });
 
