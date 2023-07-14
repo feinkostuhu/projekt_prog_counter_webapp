@@ -13,43 +13,45 @@
 </head>
 
 <body class="m-2 space-y-4" x-data>
+  <div class="flex space-x-2 container mx-auto max-w-xl">
   <h1 class="font-semibold text-lg m-4" x-text="$store.data.topic"> </h1>
+</div>
   <div class="container mx-auto max-w-xl">
-    <p x-text="$store.data.count"></p>
-    <!-- <p x-text="localStorage.getItem('count')"> -->
+    <p x-text="$store.data.count" :class = "$store.data.color"></p>
 
     </p>
   </div>
-  <div class="container mx-auto max-w-xl">
+  <div class="flex space-x-2 container mx-auto max-w-xl">
+
     <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="resetCounter()">
       Reset Counter
     </button>
-  </div>
-  <div class="container mx-auto max-w-xl">
+
+
     <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="inc()">
       +
     </button>
-  </div>
-  <div class="container mx-auto max-w-xl">
+
+
     <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="dec()">
       -
     </button>
-  </div>
-  <div class="container mx-auto max-w-xl">
+
+
     <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="addTen()">
       +10
     </button>
-  </div>
-  <div class="container mx-auto max-w-xl">
+
+
     <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="subTen()">
       -10
     </button>
-  </div>
-  <div class="container mx-auto max-w-xl">
+
+
     <input class="border rounded drop-shadow px-1.5 w-32" placeholder="Eingabe Punkte"
       x-model.number="$store.data.inputPoints">
-  </div>
-  <div class="container mx-auto max-w-xl">
+
+
     <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="addUserInput()">
       Füge hinzu
     </button>
@@ -57,8 +59,24 @@
       Ziehe ab
     </button>
 
+    <div class="flex flex-col space-y-2 container mx-auto max-w-xl">
+      <select 
+      class="p-2 rounded-md"
+      :class="$store.data.color"
+      x-model="$store.data.color">
+      <option value="">Farbe wählen</option>
+        <template x-for="[lbl,clr] in [['Rot','bg-red-400'],['Grün','bg-green-400'],['Blau','bg-blue-400']]">
+          <option 
+          class="p-4"
+          
+          :class="clr"
+          :value="clr"
+          x-text="lbl"/>
+        </template>
+      </select>
   </div>
 
+  </div>
 </body>
 
 </html>
